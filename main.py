@@ -9,7 +9,8 @@ def menuMaker():
 	percentile=14
 	try:
 		wb = load_workbook('Options_Outcomes.xlsx')
-		results=area
+		ws = wb.get_sheet_by_name('Sheet1')
+		results=len(ws['a'])
 	except: results="NO FUNCIONA EL EXCEL"
 	
 	return results
