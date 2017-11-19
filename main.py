@@ -7,9 +7,7 @@ def menuMaker():
 	region='ANTIOQUIA'
 	area='BELLAS ARTES'
 	percentile=14
-	wb = load_workbook('Options_Outcomes.xlsx')
-	ws = wb.get_sheet_by_name('Sheet1')
-	results=len(ws['a'])
+	results=area
 	return results
 
 
