@@ -1,6 +1,5 @@
 from flask import Flask
 app = Flask(__name__)
-from openpyxl import load_workbook
 
 @app.route('/')
 def menuMaker():
@@ -8,9 +7,8 @@ def menuMaker():
 	area='BELLAS ARTES'
 	percentile=14
 	try:
-		wb = load_workbook('Options_Outcomes.xlsx')
-		ws = wb.get_sheet_by_name('Sheet1')
-		results=len(ws['a'])
+		data=open('Options_Outcomes.txt' , 'r').read().split('\n')
+		results=data[0]
 	except: results="NO FUNCIONA EL EXCEL"
 	
 	return results
