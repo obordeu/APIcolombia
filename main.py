@@ -25,7 +25,7 @@ def menuMaker():
 	for e in s:
 		results[r] = (ws.cell(row=e, column=6).value), (ws.cell(row=e, column=7).value), str((ws.cell(row=e, column=8).value))
 		r -= 1
-		return results
+	return results
 
 
 def loadData():
