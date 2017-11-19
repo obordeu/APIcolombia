@@ -7,7 +7,11 @@ def menuMaker():
 	region='ANTIOQUIA'
 	area='BELLAS ARTES'
 	percentile=14
-	results=area
+	try:
+		wb = load_workbook('Options_Outcomes.xlsx')
+		results=area
+	except: results="NO FUNCIONA EL EXCEL"
+	
 	return results
 
 
