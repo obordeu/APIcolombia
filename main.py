@@ -6,10 +6,30 @@ def menuMaker():
 	region='ANTIOQUIA'
 	area='BELLAS ARTES'
 	percentile=14
-	try:
-		data=open('Options_Outcomes.txt' , 'r').read().split('\n')
-		results=data[0]
-	except: results="NO FUNCIONA EL EXCEL"
+
+
+	data=open('Options_Outcomes.txt' , 'r').read().split('\n')
+	collegeRow=[]
+	for i in range(0,len(data)):
+		row=data[i]
+		row=row.split(';')
+		if row[2]==region:
+			if len(area)>0:
+				if area in row[4]:
+					try:
+						p=int(row[1])
+						if percentile>=p:
+							collegeRow.append(i)
+					except:
+						collegeRow.append(i)
+			else:
+				try:
+					p=int(row[1])
+					if percentile>=p:
+						collegeRow.append(i)
+				except:
+					collegeRow.append(i)
+	results=collegeRow
 	
 	return results
 
