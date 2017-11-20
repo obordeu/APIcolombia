@@ -1,5 +1,6 @@
 from flask import Flask
 app = Flask(__name__)
+import json
 
 @app.route('/')
 def menuMaker():
@@ -31,8 +32,7 @@ def menuMaker():
 					except:
 						collegeRow.append(i)
 	results=collegeRow
-	
-	return results
+	return json.dumps(results)
 
 
 
